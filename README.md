@@ -1,1 +1,3 @@
-# Rock_Paper_Scissors
+# Rock Paper Scissors
+
+Simple game with HMAC
