@@ -1,22 +1,30 @@
 using System;
+using System.Linq;
+using System.Security.Cryptography;
 
-class task_3
+namespace Rock_Paper_Scissors
 {
-    static void Main(string[] args)
+    class Program
     {
-        if (args.Length < 3){
-            Console.WriteLine("Input 3 or more arguments!\nExample: rock paper scissors");
-            return;
-        }
+        static int Main(string[] args)
+        { 
+            if (args.Length < 3){
+                Console.WriteLine("Input 3 or more arguments!\nFor example: 'rock paper scissors' or '1 2 3 4 5'\n");
+                return 0;
+            }
         
-        /*
-        Console.WriteLine(args.Length);
-        foreach (string ar in args) {
-            Console.WriteLine(ar);
+            if (args.Length % 2 == 0) {
+                Console.WriteLine("There must be odd count of arguments!");
+                return 0;
+            }
+
+            if (args.Distinct().Count() != args.Length){
+                Console.WriteLine("Arguments must be non-repeating!");
+                return 0;
+            }
+            
+
         }
-        */
-
-
 
     }
 }
